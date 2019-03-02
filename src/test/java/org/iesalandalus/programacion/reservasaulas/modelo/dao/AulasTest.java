@@ -1,5 +1,5 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dao;
-/*
+
 import static org.junit.Assert.*;
 
 import java.util.List;
@@ -9,17 +9,17 @@ import javax.naming.OperationNotSupportedException;
 import org.iesalandalus.programacion.reservasaulas.modelo.dao.Aulas;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Aula;
 import org.junit.Test;
-*/
+
 public class AulasTest {
-/*	
+
 	private static final String NOMBRE_AULA1 = "Aula 1";
 	private static final String NOMBRE_AULA2 = "Aula 2";
-	private static final String NOMBRE_SALON = "Sal贸n de actos";
+	private static final String NOMBRE_SALON = "Sal髇 de actos";
 	private static final int PUESTOS1 = 30;
 	private static final int PUESTOS2 = 40;
 	private static final int PUESTOS3 = 100;
-	private static final String ERROR_EXCEPCION = "Deber铆a haber saltado la excepci贸n.";
-	private static final String ERROR_NO_EXCEPCION = "No deber铆a haber saltado la excepci贸n.";
+	private static final String ERROR_EXCEPCION = "Deber韆 haber saltado la excepci髇.";
+	private static final String ERROR_NO_EXCEPCION = "No deber韆 haber saltado la excepci髇.";
 	
 	private final Aula aula1 = new Aula(NOMBRE_AULA1, PUESTOS1);
 	private final Aula aula2 = new Aula(NOMBRE_AULA2, PUESTOS2);
@@ -203,7 +203,7 @@ public class AulasTest {
 	public void borrarNoValidoTest() {
 		Aulas aulas = insertarTres();
 		try {
-			Aula aula = new Aula("Sal贸n 2", 50);
+			Aula aula = new Aula("Sal髇 2", 50);
 			aulas.borrar(aula);
 			fail(ERROR_EXCEPCION);
 		} catch (OperationNotSupportedException e) {
@@ -245,5 +245,4 @@ public class AulasTest {
 		assertEquals(aula2.toString(), representacion.get(1));
 		assertEquals(salon.toString(), representacion.get(2));
 	}
-*/
 }

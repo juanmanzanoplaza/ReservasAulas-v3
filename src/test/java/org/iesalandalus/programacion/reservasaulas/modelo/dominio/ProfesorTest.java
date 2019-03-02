@@ -1,16 +1,15 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dominio;
-/*
+
 import static org.junit.Assert.*;
 
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
 import org.junit.Test;
-*/
+
 public class ProfesorTest {
-/*	
-	private static final String ERROR_EXCEPCION = "Deber√≠a haber saltado la excepci√≥n.";
-	private static final String ERROR_NO_EXCEPCION = "No deber√≠a haber saltado la excepci√≥n.";
+	private static final String ERROR_EXCEPCION = "DeberÌa haber saltado la excepciÛn.";
+	private static final String ERROR_NO_EXCEPCION = "No deberÌa haber saltado la excepciÛn.";
 	
-	private static final String NOMBRE = "Jos√© Ram√≥n";
+	private static final String NOMBRE = "JosÈ RamÛn";
 	private static final String CORREO = "joseramon.jimenez@iesalandalus.org";
 	private static final String TELEFONO = "950112233";
 	private static Profesor PROFESOR_CON_TELEFONO = new Profesor(NOMBRE, CORREO, TELEFONO);
@@ -64,7 +63,7 @@ public class ProfesorTest {
 			profesor = new Profesor("", CORREO);
 			fail(ERROR_EXCEPCION);
 		} catch (IllegalArgumentException e) {
-			assertEquals("El nombre del profesor no puede estar vac√≠o.", e.getMessage());
+			assertEquals("El nombre del profesor no puede estar vacÌo.", e.getMessage());
 			assertNull(profesor);
 		}
 		try {
@@ -78,7 +77,7 @@ public class ProfesorTest {
 			profesor = new Profesor(NOMBRE, "");
 			fail(ERROR_EXCEPCION);
 		} catch (IllegalArgumentException e) {
-			assertEquals("El correo del profesor no es v√°lido.", e.getMessage());
+			assertEquals("El correo del profesor no es v·lido.", e.getMessage());
 			assertNull(profesor);
 		}
 	}
@@ -90,7 +89,7 @@ public class ProfesorTest {
 			profesor = new Profesor(NOMBRE, CORREO, "");
 			fail(ERROR_EXCEPCION);
 		} catch (IllegalArgumentException e) {
-			assertEquals("El tel√©fono del profesor no es v√°lido.", e.getMessage());
+			assertEquals("El telÈfono del profesor no es v·lido.", e.getMessage());
 			assertNull(profesor);
 		}
 	}
@@ -131,7 +130,7 @@ public class ProfesorTest {
 	@Test
 	public void equalTest() {
 		Profesor profesor = new Profesor(NOMBRE, CORREO, TELEFONO);
-		Profesor profesor1 = new Profesor("Andr√©s", CORREO, TELEFONO);
+		Profesor profesor1 = new Profesor("AndrÈs", CORREO, TELEFONO);
 		assertNotEquals(profesor, null);
 		assertNotEquals(profesor, "");
 		assertEquals(profesor, profesor);
@@ -142,7 +141,7 @@ public class ProfesorTest {
 	@Test
 	public void hashCodeTest() {
 		Profesor profesor = new Profesor(NOMBRE, CORREO, TELEFONO);
-		Profesor profesor1 = new Profesor("Andr√©s", CORREO, TELEFONO);
+		Profesor profesor1 = new Profesor("AndrÈs", CORREO, TELEFONO);
 		assertEquals(profesor.hashCode(), profesor.hashCode());
 		assertEquals(PROFESOR_CON_TELEFONO.hashCode(), profesor.hashCode());
 		assertNotEquals(profesor.hashCode(), profesor1.hashCode());
@@ -150,8 +149,7 @@ public class ProfesorTest {
 	
 	@Test
 	public void toStringTest() {
-		assertEquals("[nombre=Jos√© Ram√≥n, correo=joseramon.jimenez@iesalandalus.org, telefono=950112233]", PROFESOR_CON_TELEFONO.toString());
-		assertEquals("[nombre=Jos√© Ram√≥n, correo=joseramon.jimenez@iesalandalus.org]", PROFESOR_SIN_TELEFONO.toString());
+		assertEquals("[nombre=JosÈ RamÛn, correo=joseramon.jimenez@iesalandalus.org, telefono=950112233]", PROFESOR_CON_TELEFONO.toString());
+		assertEquals("[nombre=JosÈ RamÛn, correo=joseramon.jimenez@iesalandalus.org]", PROFESOR_SIN_TELEFONO.toString());
 	}
-*/
 }

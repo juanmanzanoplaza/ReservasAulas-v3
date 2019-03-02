@@ -1,5 +1,5 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia;
-/*
+
 import static org.junit.Assert.*;
 
 import java.time.LocalDate;
@@ -8,11 +8,11 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Pe
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.PermanenciaPorTramo;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Tramo;
 import org.junit.Test;
-*/
+
 public class PermanenciaPorTramoTest {
-/*	
-	private static final String ERROR_EXCEPCION = "DeberÃ­a haber saltado la excepciÃ³n.";
-	private static final String ERROR_NO_EXCEPCION = "No deberÃ­a haber saltado la excepciÃ³n.";
+	
+	private static final String ERROR_EXCEPCION = "Debería haber saltado la excepción.";
+	private static final String ERROR_NO_EXCEPCION = "No debería haber saltado la excepción.";
 	
 	private static final LocalDate DIA_LD = LocalDate.of(2018, 12, 1); 
 	private static final String DIA_STR = "01/12/2018";
@@ -61,7 +61,7 @@ public class PermanenciaPorTramoTest {
 			permanencia = new PermanenciaPorTramo(dia, Tramo.MANANA);
 			fail(ERROR_EXCEPCION);
 		} catch (IllegalArgumentException e) {
-			assertEquals("El dÃ­a de una permanencia no puede ser nulo.", e.getMessage());
+			assertEquals("El día de una permanencia no puede ser nulo.", e.getMessage());
 			assertNull(permanencia);
 		}
 		try {
@@ -69,7 +69,7 @@ public class PermanenciaPorTramoTest {
 			permanencia = new PermanenciaPorTramo(dia, Tramo.MANANA);
 			fail(ERROR_EXCEPCION);
 		} catch (IllegalArgumentException e) {
-			assertEquals("El dÃ­a de una permanencia no puede ser nulo.", e.getMessage());
+			assertEquals("El día de una permanencia no puede ser nulo.", e.getMessage());
 			assertNull(permanencia);
 		}
 		try {
@@ -77,7 +77,7 @@ public class PermanenciaPorTramoTest {
 			permanencia = new PermanenciaPorTramo(dia, Tramo.MANANA);
 			fail(ERROR_EXCEPCION);
 		} catch (IllegalArgumentException e) {
-			assertEquals("El formato del dÃ­a de la permanencia no es correcto.", e.getMessage());
+			assertEquals("El formato del día de la permanencia no es correcto.", e.getMessage());
 			assertNull(permanencia);
 		}
 	}
@@ -139,7 +139,6 @@ public class PermanenciaPorTramoTest {
 	
 	@Test
 	public void toStringTest() {
-		assertEquals("[dia=01/12/2018, tramo=MaÃ±ana]", PERMANENCIA.toString());
+		assertEquals("[dia=01/12/2018, tramo=Mañana]", PERMANENCIA.toString());
 	}
-*/
 }

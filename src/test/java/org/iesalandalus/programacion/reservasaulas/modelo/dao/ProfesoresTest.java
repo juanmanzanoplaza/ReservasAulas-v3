@@ -1,5 +1,5 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dao;
-/*
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
@@ -11,17 +11,17 @@ import javax.naming.OperationNotSupportedException;
 
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
 import org.junit.Test;
-*/
+
 public class ProfesoresTest {
-/*	
-	private static final String NOMBRE_PROFESOR1 = "Jos√© Ram√≥n";
-	private static final String NOMBRE_PROFESOR2 = "Andr√©s";
+	
+	private static final String NOMBRE_PROFESOR1 = "JosÈ RamÛn";
+	private static final String NOMBRE_PROFESOR2 = "AndrÈs";
 	private static final String NOMBRE_PROFESOR3 = "Bego√±a";
 	private static final String CORREO_PROFESOR1 = "a@b.cc";
 	private static final String CORREO_PROFESOR2 = "b@c.dd";
 	private static final String CORREO_PROFESOR3 = "c@d.ee";
-	private static final String ERROR_EXCEPCION = "Deber√≠a haber saltado la excepci√≥n.";
-	private static final String ERROR_NO_EXCEPCION = "No deber√≠a haber saltado la excepci√≥n.";
+	private static final String ERROR_EXCEPCION = "DeberÌa haber saltado la excepciÛn.";
+	private static final String ERROR_NO_EXCEPCION = "No deberÌa haber saltado la excepciÛn.";
 	
 	private final Profesor profesor1 = new Profesor(NOMBRE_PROFESOR1, CORREO_PROFESOR1);
 	private final Profesor profesor2 = new Profesor(NOMBRE_PROFESOR2, CORREO_PROFESOR2);
@@ -247,5 +247,4 @@ public class ProfesoresTest {
 		assertEquals(profesor2.toString(), representacion.get(1));
 		assertEquals(profesor3.toString(), representacion.get(2));
 	}
-*/
 }

@@ -1,5 +1,5 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dominio;
-/*
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
@@ -7,13 +7,13 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
-*/
+
 public class AulaTest {
-/*	
-	private static final String ERROR_EXCEPCION = "DeberÃ­a haber saltado la excepciÃ³n.";
-	private static final String ERROR_NO_EXCEPCION = "No deberÃ­a haber saltado la excepciÃ³n.";
+
+	private static final String ERROR_EXCEPCION = "Debería haber saltado la excepción.";
+	private static final String ERROR_NO_EXCEPCION = "No debería haber saltado la excepción.";
 	
-	private static final String NOMBRE = "SalÃ³n de actos";
+	private static final String NOMBRE = "Salón de actos";
 	private static final int PUESTOS = 30;
 
 	@Test
@@ -44,21 +44,21 @@ public class AulaTest {
 			aula = new Aula("", PUESTOS);
 			fail(ERROR_EXCEPCION);
 		} catch (IllegalArgumentException e) {
-			assertEquals("El nombre del aula no puede estar vacÃ­o.", e.getMessage());
+			assertEquals("El nombre del aula no puede estar vacío.", e.getMessage());
 			assertNull(aula);
 		}
 		try {
 			aula = new Aula(NOMBRE, 9);
 			fail(ERROR_EXCEPCION);
 		} catch (IllegalArgumentException e) {
-			assertEquals("El nÃºmero de puestos no es correcto.", e.getMessage());
+			assertEquals("El número de puestos no es correcto.", e.getMessage());
 			assertNull(aula);
 		}
 		try {
 			aula = new Aula(NOMBRE, 101);
 			fail(ERROR_EXCEPCION);
 		} catch (IllegalArgumentException e) {
-			assertEquals("El nÃºmero de puestos no es correcto.", e.getMessage());
+			assertEquals("El número de puestos no es correcto.", e.getMessage());
 			assertNull(aula);
 		}
 	}
@@ -101,7 +101,7 @@ public class AulaTest {
 	public void hasCodeTest() {
 		Aula aula = new Aula(NOMBRE, PUESTOS);
 		Aula aula1 = new Aula(NOMBRE, 20);
-		Aula aula2 = new Aula("AndrÃ©s", PUESTOS);
+		Aula aula2 = new Aula("Andrés", PUESTOS);
 		assertEquals(aula.hashCode(), aula.hashCode());
 		assertEquals(aula.hashCode(), aula1.hashCode());
 		assertNotEquals(aula.hashCode(), aula2.hashCode());
@@ -111,7 +111,7 @@ public class AulaTest {
 	public void equalTest() {
 		Aula aula = new Aula(NOMBRE, PUESTOS);
 		Aula aula1 = new Aula(NOMBRE, 20);
-		Aula aula2 = new Aula("AndrÃ©s", PUESTOS);
+		Aula aula2 = new Aula("Andrés", PUESTOS);
 		assertNotEquals(aula, null);
 		assertNotEquals(aula, "");
 		assertEquals(aula, aula);
@@ -122,7 +122,6 @@ public class AulaTest {
 	@Test
 	public void toStringTest() {
 		Aula aula = new Aula(NOMBRE, PUESTOS);
-		assertEquals("[nombre=SalÃ³n de actos, puestos=30]", aula.toString());
+		assertEquals("[nombre=Salón de actos, puestos=30]", aula.toString());
 	}
-*/
 }

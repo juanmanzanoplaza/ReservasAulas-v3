@@ -1,5 +1,5 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dao;
-/*
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
@@ -20,15 +20,15 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Pe
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.PermanenciaPorTramo;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Tramo;
 import org.junit.Test;
-*/
+
 public class ReservasTest {
-/*	
-	private static final String NOMBRE_PROFESOR1 = "Jos√© Ram√≥n";
-	private static final String NOMBRE_PROFESOR2 = "Andr√©s";
+	
+	private static final String NOMBRE_PROFESOR1 = "JosÈ RamÛn";
+	private static final String NOMBRE_PROFESOR2 = "AndrÈs";
 	private static final String CORREO = "a@b.cc";
 	private static final String NOMBRE_AULA1 = "Aula 1";
 	private static final String NOMBRE_AULA2 = "Aula 2";
-	private static final String NOMBRE_SALON = "Sal√≥n de actos";
+	private static final String NOMBRE_SALON = "SalÛn de actos";
 	private static final int PUESTOS1 = 30;
 	private static final int PUESTOS2 = 50;
 	private static final int PUESTOS3 = 100;
@@ -40,8 +40,8 @@ public class ReservasTest {
 	private static final LocalDate DIA4 = LocalDate.of(DENTRO_DOS_MESES.getYear(), DENTRO_DOS_MESES.getMonthValue(), 2);
 	private static final LocalTime HORA1 = LocalTime.of(10, 0);
 	private static final LocalTime HORA2 = LocalTime.of(11, 0);
-	private static final String ERROR_EXCEPCION = "Deber√≠a haber saltado la excepci√≥n.";
-	private static final String ERROR_NO_EXCEPCION = "No deber√≠a haber saltado la excepci√≥n.";
+	private static final String ERROR_EXCEPCION = "DeberÌa haber saltado la excepciÛn.";
+	private static final String ERROR_NO_EXCEPCION = "No deberÌa haber saltado la excepciÛn.";
 	
 	private static final Profesor PROFESOR1 = new Profesor(NOMBRE_PROFESOR1, CORREO);
 	private static final Profesor PROFESOR2 = new Profesor(NOMBRE_PROFESOR2, CORREO);
@@ -140,7 +140,7 @@ public class ReservasTest {
 			reservas.insertar(reserva);
 			fail(ERROR_EXCEPCION);
 		} catch (OperationNotSupportedException e) {
-			assertEquals("Ya se ha realizado una reserva por hora para este d√≠a y aula.", e.getMessage());
+			assertEquals("Ya se ha realizado una reserva por hora para este dÌa y aula.", e.getMessage());
 			assertEquals(1, reservas.getNumReservas());
 		} 
 		reservas = new Reservas();
@@ -151,7 +151,7 @@ public class ReservasTest {
 			reservas.insertar(reserva);
 			fail(ERROR_EXCEPCION);
 		} catch (OperationNotSupportedException e) {
-			assertEquals("Ya se ha realizado una reserva por tramo para este d√≠a y aula.", e.getMessage());
+			assertEquals("Ya se ha realizado una reserva por tramo para este dÌa y aula.", e.getMessage());
 			assertEquals(1, reservas.getNumReservas());
 		} 
 	}
@@ -165,7 +165,7 @@ public class ReservasTest {
 			reservas.insertar(reserva);
 			fail(ERROR_EXCEPCION);
 		} catch (OperationNotSupportedException e) {
-			assertEquals("S√≥lo se pueden hacer reservas para el mes que viene o posteriores.", e.getMessage());
+			assertEquals("SÛlo se pueden hacer reservas para el mes que viene o posteriores.", e.getMessage());
 			assertEquals(0, reservas.getNumReservas());
 		} 
 	}
@@ -185,7 +185,7 @@ public class ReservasTest {
 			reservas.insertar(reserva);
 			fail(ERROR_EXCEPCION);
 		} catch (OperationNotSupportedException e) {
-			assertEquals("Esta reserva excede los puntos m√°ximos por mes para dicho profesor.", e.getMessage());
+			assertEquals("Esta reserva excede los puntos m·ximos por mes para dicho profesor.", e.getMessage());
 			assertEquals(3, reservas.getNumReservas());
 		} 
 		try {
@@ -199,7 +199,7 @@ public class ReservasTest {
 			reservas.insertar(reserva);
 			fail(ERROR_EXCEPCION);
 		} catch (OperationNotSupportedException e) {
-			assertEquals("Esta reserva excede los puntos m√°ximos por mes para dicho profesor.", e.getMessage());
+			assertEquals("Esta reserva excede los puntos m·ximos por mes para dicho profesor.", e.getMessage());
 			assertEquals(6, reservas.getNumReservas());
 		} 
 	}
@@ -451,5 +451,4 @@ public class ReservasTest {
 			assertEquals("No se puede consultar la disponibilidad de una permanencia nula.", e.getMessage());
 		}
 	}
-*/
 }
