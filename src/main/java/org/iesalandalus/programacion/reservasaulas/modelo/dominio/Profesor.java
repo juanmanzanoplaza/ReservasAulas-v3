@@ -1,5 +1,6 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dominio;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -11,7 +12,7 @@ import java.util.regex.Pattern;
  * @version 2
  *
  */
-public class Profesor {
+public class Profesor implements Serializable {
 
 	private static final String ER_TELEFONO = "^[69][0-9]{8}$";
 	private static final String ER_CORREO = "^[a-z0-9]+(\\.[a-z0-9]+)*@[a-z]+(\\.[a-z]+)*(\\.[a-z]{1,4})$";

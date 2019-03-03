@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia;
 
+import java.io.Serializable;
+
 /**
  * Clase enumerada para los distintos tramos de la permanencia
  * 
@@ -7,7 +9,7 @@ package org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia;
  * @author Juan Antonio Manzano Plaza
  * @version 2
  */
-public enum Tramo {
+public enum Tramo implements Serializable{
 	MANANA("Mañana"), TARDE("Tarde");
 	private String cadenaAMostrar;
 
