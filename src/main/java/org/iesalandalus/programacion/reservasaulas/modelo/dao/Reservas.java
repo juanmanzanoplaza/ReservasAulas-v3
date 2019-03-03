@@ -1,5 +1,12 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dao;
 
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +32,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Pe
 public class Reservas {
 
 	private static final float MAX_PUNTOS_PROFESOR_MES = 200f;
+	private static final String NOMBRE_FICHERO_RESERVAS = "/ficheros/reservas.dat";
 	private List<Reserva> coleccionReservas;
 
 	/**
@@ -340,4 +348,36 @@ public class Reservas {
 		return true;
 	}
 
+	public void leer() {
+		try {
+			Reserva reserva;
+			File f = new File(NOMBRE_FICHERO_RESERVAS);
+			FileInputStream fis = new FileInputStream(f);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			
+			try {
+				while(true) {
+					reserva = (Reserva) ois.readObject();
+					coleccionReservas.add(reserva);
+				}
+			} catch(EOFException eof) {
+				ois.close();
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void escribir() {
+		try {
+			File f = new File(NOMBRE_FICHERO_RESERVAS);
+			FileOutputStream fos = new FileOutputStream(f);
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			for(Reserva r : coleccionReservas)
+				oos.writeObject(r);
+			oos.close();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 }
