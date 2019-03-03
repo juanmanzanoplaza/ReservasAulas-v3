@@ -1,6 +1,15 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dao;
 
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.naming.OperationNotSupportedException;
@@ -10,7 +19,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Aula;
 /**
  * Clase que guarda y define las operaciones que se pueden realizar sobre un
  * conjunto de aulas.
- * 
+ *
  * @see Aula
  * @author Juan Antonio Manzano Plaza
  * @version 2
@@ -18,6 +27,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Aula;
  */
 public class Aulas {
 
+	private static final String NOMBRE_FICHERO_AULAS = "/ficheros/aulas.dat";
 	private List<Aula> coleccionAulas;
 
 	/**
@@ -29,7 +39,7 @@ public class Aulas {
 
 	/**
 	 * Constructor copia. Realiza copia profunda para evitar aliasing
-	 * 
+	 *
 	 * @param aulas
 	 *            el objeto del que obtener los datos para inicializar
 	 * @throws IllegalArgumentException
@@ -42,7 +52,7 @@ public class Aulas {
 	/**
 	 * Guarda en la colección actual de aulas los que hay en la recibida como
 	 * parámetro
-	 * 
+	 *
 	 * @param aulas
 	 *            la colección a copiar
 	 * @throws IllegalArgumentException
@@ -56,7 +66,7 @@ public class Aulas {
 
 	/**
 	 * Realiza la copia en profundidad de cada profesor para evitar aliasing
-	 * 
+	 *
 	 * @param coleccionAulas
 	 *            la colección de aulas a copiar
 	 * @return una copia de la colección
@@ -70,7 +80,7 @@ public class Aulas {
 
 	/**
 	 * Obtiene todas las aulas de la colección actual
-	 * 
+	 *
 	 * @return una copia de la colección
 	 */
 	public List<Aula> getAulas() {
@@ -79,7 +89,7 @@ public class Aulas {
 
 	/**
 	 * Obtiene el número de aulas que existen en la colección actual
-	 * 
+	 *
 	 * @return el número de aulas
 	 */
 	public int getNumAulas() {
@@ -88,7 +98,7 @@ public class Aulas {
 
 	/**
 	 * Guarda un aula en la colección
-	 * 
+	 *
 	 * @param aula
 	 *            el aula a guardar
 	 * @throws IllegalArgumentException
@@ -106,7 +116,7 @@ public class Aulas {
 
 	/**
 	 * Busca un aula en la colección
-	 * 
+	 *
 	 * @param aula
 	 *            el aula a buscar
 	 * @return el aula buscada o null si no la encuentra
@@ -121,7 +131,7 @@ public class Aulas {
 
 	/**
 	 * Borra un aula de la colección
-	 * 
+	 *
 	 * @param aula
 	 *            el aula a borrar
 	 * @throws IllegalArgumentException
@@ -138,7 +148,7 @@ public class Aulas {
 
 	/**
 	 * Obtiene las salidas de todas las aulas de la colección
-	 * 
+	 *
 	 * @return la salida de las aulas
 	 */
 	public List<String> representar() {
@@ -146,6 +156,39 @@ public class Aulas {
 		for (Aula a : this.coleccionAulas)
 			representar.add(a.toString());
 		return representar;
+	}
+
+	public void leer() {
+		try {
+			Aula aula;
+			File f = new File(NOMBRE_FICHERO_AULAS);
+			FileInputStream fis = new FileInputStream(f);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+
+			try {
+				while (true) {
+					aula = (Aula) ois.readObject();
+					coleccionAulas.add(aula);
+				}
+			} catch (EOFException eof) {
+				ois.close();
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public void escribir() {
+		try {
+			File f = new File(NOMBRE_FICHERO_AULAS);
+			FileOutputStream fos = new FileOutputStream(f);
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			for(Aula a : coleccionAulas)
+				oos.writeObject(a);
+			oos.close();
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 }
