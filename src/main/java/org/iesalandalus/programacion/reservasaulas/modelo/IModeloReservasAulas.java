@@ -12,7 +12,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Pe
 /**
  *
  * Interfaz de la clase ModeloReservasAulas
- * 
+ *
  * @see ModeloReservasAulas
  * @author Juan Antonio Manzano Plaza
  * @version 2
@@ -20,48 +20,60 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Pe
  */
 public interface IModeloReservasAulas {
 
-	List<Aula> getAulas();
+	public List<Aula> getAulas();
 
-	int getNumAulas();
+	public int getNumAulas();
 
-	List<String> representarAulas();
+	public List<String> representarAulas();
 
-	Aula buscarAula(Aula buscar);
+	public Aula buscarAula(Aula buscar);
 
-	void insertarAula(Aula insertar) throws OperationNotSupportedException, IllegalArgumentException;
+	public void insertarAula(Aula insertar) throws OperationNotSupportedException, IllegalArgumentException;
 
-	void borrarAula(Aula borrar) throws OperationNotSupportedException, IllegalArgumentException;
+	public void borrarAula(Aula borrar) throws OperationNotSupportedException, IllegalArgumentException;
 
-	List<Profesor> getProfesores();
+	public void leerAulas();
 
-	int getNumProfesores();
+	public void escribirAulas();
 
-	List<String> representarProfesores();
+	public List<Profesor> getProfesores();
 
-	Profesor buscarProfesor(Profesor buscar);
+	public int getNumProfesores();
 
-	void insertarProfesor(Profesor insertar) throws OperationNotSupportedException, IllegalArgumentException;
+	public List<String> representarProfesores();
 
-	void borrarProfesor(Profesor borrar) throws OperationNotSupportedException, IllegalArgumentException;
+	public Profesor buscarProfesor(Profesor buscar);
 
-	List<Reserva> getReservas();
+	public void insertarProfesor(Profesor insertar) throws OperationNotSupportedException, IllegalArgumentException;
 
-	int getNumReservas();
+	public void borrarProfesor(Profesor borrar) throws OperationNotSupportedException, IllegalArgumentException;
 
-	List<String> representarReservas();
+	public void leerProfesores();
 
-	Reserva buscarReserva(Reserva buscar);
+	public void escribirProfesores();
 
-	void realizarReserva(Reserva realizar) throws OperationNotSupportedException, IllegalArgumentException;
+	public List<Reserva> getReservas();
 
-	void anularReserva(Reserva anular) throws OperationNotSupportedException, IllegalArgumentException;
+	public int getNumReservas();
 
-	List<Reserva> getReservasAula(Aula aula) throws IllegalArgumentException;
+	public List<String> representarReservas();
 
-	List<Reserva> getReservasProfesor(Profesor profesor) throws IllegalArgumentException;
+	public Reserva buscarReserva(Reserva buscar);
 
-	List<Reserva> getReservasPermanencia(Permanencia permanencia) throws IllegalArgumentException;
+	public void realizarReserva(Reserva realizar) throws OperationNotSupportedException, IllegalArgumentException;
 
-	boolean consultarDisponibilidad(Aula aula, Permanencia permanencia) throws IllegalArgumentException;
+	public void anularReserva(Reserva anular) throws OperationNotSupportedException, IllegalArgumentException;
+
+	public List<Reserva> getReservasAula(Aula aula) throws IllegalArgumentException;
+
+	public List<Reserva> getReservasProfesor(Profesor profesor) throws IllegalArgumentException;
+
+	public List<Reserva> getReservasPermanencia(Permanencia permanencia) throws IllegalArgumentException;
+
+	public boolean consultarDisponibilidad(Aula aula, Permanencia permanencia) throws IllegalArgumentException;
+
+	public void leerReservas();
+
+	public void escribirReservas();
 
 }
