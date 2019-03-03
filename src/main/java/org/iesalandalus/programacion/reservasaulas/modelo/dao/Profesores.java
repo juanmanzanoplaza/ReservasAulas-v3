@@ -1,5 +1,11 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dao;
 
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +16,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
 /**
  * Clase que guarda y define las operaciones que se pueden realizar sobre un
  * conjunto de profesores
- * 
+ *
  * @see Profesor
  * @author Juan Antonio Manzano Plaza
  * @version 2
@@ -18,6 +24,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
  */
 public class Profesores {
 
+	private static final String NOMBRE_FICHERO_PROFESORES = "/ficheros/profesores.dat";
 	private List<Profesor> coleccionProfesores;
 
 	/**
@@ -29,7 +36,7 @@ public class Profesores {
 
 	/**
 	 * Constructor copia. Realiza copia profunda para evitar aliasing
-	 * 
+	 *
 	 * @param profesores
 	 *            el objeto del que obtener los datos para inicializar
 	 * @throws IllegalArgumentException
@@ -42,7 +49,7 @@ public class Profesores {
 	/**
 	 * Guarda en la colección actual de profesores los que hay en la recibida como
 	 * parámetro
-	 * 
+	 *
 	 * @param profesores
 	 *            la colección a copiar
 	 * @throws IllegalArgumentException
@@ -56,7 +63,7 @@ public class Profesores {
 
 	/**
 	 * Realiza la copia en profundidad de cada profesor para evitar aliasing
-	 * 
+	 *
 	 * @param profesores
 	 *            la colección de profesores a copiar
 	 * @return una copia de la colección
@@ -71,7 +78,7 @@ public class Profesores {
 	/**
 	 * Obtiene todos los profesores de la colección actual. Realiza una copia para
 	 * evitar aliasing
-	 * 
+	 *
 	 * @return una copia de la colección
 	 */
 	public List<Profesor> getProfesores() {
@@ -80,7 +87,7 @@ public class Profesores {
 
 	/**
 	 * Obtiene el número de profesores que existen en la colección actual
-	 * 
+	 *
 	 * @return el número de profesores
 	 */
 	public int getNumProfesores() {
@@ -89,7 +96,7 @@ public class Profesores {
 
 	/**
 	 * Guarda un profesor en la colección
-	 * 
+	 *
 	 * @param profesor
 	 *            el profesor a guardar
 	 * @throws IllegalArgumentException
@@ -107,7 +114,7 @@ public class Profesores {
 
 	/**
 	 * Busca un profesor en la colección
-	 * 
+	 *
 	 * @param profesor
 	 *            el profesor a buscar
 	 * @return el profesor buscado o null si no lo encuentra
@@ -122,7 +129,7 @@ public class Profesores {
 
 	/**
 	 * Borra un profesor de la colección
-	 * 
+	 *
 	 * @param profesor
 	 *            el profesor a borrar
 	 * @throws IllegalArgumentException
@@ -139,7 +146,7 @@ public class Profesores {
 
 	/**
 	 * Obtiene las salidas de todos los profesores de la colección
-	 * 
+	 *
 	 * @return la salida de los profesores
 	 */
 	public List<String> representar() {
@@ -149,4 +156,36 @@ public class Profesores {
 		return representar;
 	}
 
+	public void leer() {
+		try {
+			Profesor profesor;
+			File f = new File(NOMBRE_FICHERO_PROFESORES);
+			FileInputStream fis = new FileInputStream(f);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+
+			try {
+				while(true) {
+					profesor = (Profesor) ois.readObject();
+					coleccionProfesores.add(profesor);
+				}
+			} catch (EOFException eof) {
+				ois.close();
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public void escribir() {
+		try {
+			File f = new File(NOMBRE_FICHERO_PROFESORES);
+			FileOutputStream fos = new FileOutputStream(f);
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			for(Profesor p : coleccionProfesores)
+				oos.writeObject(p);
+			oos.close();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 }
