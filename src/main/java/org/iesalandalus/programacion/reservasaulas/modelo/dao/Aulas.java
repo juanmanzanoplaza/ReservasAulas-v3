@@ -27,7 +27,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Aula;
  */
 public class Aulas {
 
-	private static final String NOMBRE_FICHERO_AULAS = "/ficheros/aulas.dat";
+	private static final String NOMBRE_FICHERO_AULAS = ".\\ficheros";
 	private List<Aula> coleccionAulas;
 
 	/**
@@ -162,32 +162,37 @@ public class Aulas {
 		try {
 			Aula aula;
 			File f = new File(NOMBRE_FICHERO_AULAS);
+			f.mkdir();
+			f = new File(NOMBRE_FICHERO_AULAS + "\\aulas.dat");
+			f.createNewFile();
 			FileInputStream fis = new FileInputStream(f);
-			ObjectInputStream ois = new ObjectInputStream(fis);
+			ObjectInputStream ois = null;
 
 			try {
+				ois = new ObjectInputStream(fis);
 				while (true) {
 					aula = (Aula) ois.readObject();
 					coleccionAulas.add(aula);
 				}
 			} catch (EOFException eof) {
 				ois.close();
+				System.out.println("Lectura correcta del fichero aulas.dat");
 			}
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error en la lectura del fichero aulas.dat");
 		}
 	}
 
 	public void escribir() {
 		try {
-			File f = new File(NOMBRE_FICHERO_AULAS);
+			File f = new File(NOMBRE_FICHERO_AULAS + "\\aulas.dat");
 			FileOutputStream fos = new FileOutputStream(f);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			for(Aula a : coleccionAulas)
 				oos.writeObject(a);
 			oos.close();
 		} catch(Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error en la escritura del fichero aulas.dat");
 		}
 	}
 

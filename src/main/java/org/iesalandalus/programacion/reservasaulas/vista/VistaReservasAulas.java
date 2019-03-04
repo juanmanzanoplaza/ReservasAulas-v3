@@ -65,6 +65,7 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 	 * Ejecuta la orden salir de Opcion
 	 */
 	public void salir() {
+		controlador.salir();
 		System.out.println("Fin de la ejecución.");
 	}
 

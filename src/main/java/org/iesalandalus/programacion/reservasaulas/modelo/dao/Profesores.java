@@ -24,7 +24,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
  */
 public class Profesores {
 
-	private static final String NOMBRE_FICHERO_PROFESORES = "/ficheros/profesores.dat";
+	private static final String NOMBRE_FICHERO_PROFESORES = ".\\ficheros";
 	private List<Profesor> coleccionProfesores;
 
 	/**
@@ -160,32 +160,37 @@ public class Profesores {
 		try {
 			Profesor profesor;
 			File f = new File(NOMBRE_FICHERO_PROFESORES);
+			f.mkdir();
+			f = new File(NOMBRE_FICHERO_PROFESORES + "\\profesores.dat");
+			f.createNewFile();
 			FileInputStream fis = new FileInputStream(f);
-			ObjectInputStream ois = new ObjectInputStream(fis);
+			ObjectInputStream ois = null;
 
 			try {
+				ois = new ObjectInputStream(fis);
 				while(true) {
 					profesor = (Profesor) ois.readObject();
 					coleccionProfesores.add(profesor);
 				}
 			} catch (EOFException eof) {
 				ois.close();
+				System.out.println("Lectura correcta del fichero profesores.dat");
 			}
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Lectura incorrecta del fichero profesores.dat");
 		}
 	}
 
 	public void escribir() {
 		try {
-			File f = new File(NOMBRE_FICHERO_PROFESORES);
+			File f = new File(NOMBRE_FICHERO_PROFESORES + "\\profesores.dat");
 			FileOutputStream fos = new FileOutputStream(f);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			for(Profesor p : coleccionProfesores)
 				oos.writeObject(p);
 			oos.close();
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error en la escritura del fichero profesores.dat");
 		}
 	}
 }

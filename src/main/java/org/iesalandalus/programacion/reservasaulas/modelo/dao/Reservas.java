@@ -32,7 +32,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Pe
 public class Reservas {
 
 	private static final float MAX_PUNTOS_PROFESOR_MES = 200f;
-	private static final String NOMBRE_FICHERO_RESERVAS = "/ficheros/reservas.dat";
+	private static final String NOMBRE_FICHERO_RESERVAS = ".\\ficheros";
 	private List<Reserva> coleccionReservas;
 
 	/**
@@ -352,32 +352,37 @@ public class Reservas {
 		try {
 			Reserva reserva;
 			File f = new File(NOMBRE_FICHERO_RESERVAS);
+			f.mkdir();
+			f = new File(NOMBRE_FICHERO_RESERVAS + "\\reservas.dat");
+			f.createNewFile();
 			FileInputStream fis = new FileInputStream(f);
-			ObjectInputStream ois = new ObjectInputStream(fis);
+			ObjectInputStream ois = null;
 			
 			try {
+				ois = new ObjectInputStream(fis);
 				while(true) {
 					reserva = (Reserva) ois.readObject();
 					coleccionReservas.add(reserva);
 				}
 			} catch(EOFException eof) {
 				ois.close();
+				System.out.println("Lectura correcta del fichero reservas.dat");
 			}
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error en la lectura del fichero reservas.dat");
 		}
 	}
 	
 	public void escribir() {
 		try {
-			File f = new File(NOMBRE_FICHERO_RESERVAS);
+			File f = new File(NOMBRE_FICHERO_RESERVAS + "\\reservas.dat");
 			FileOutputStream fos = new FileOutputStream(f);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			for(Reserva r : coleccionReservas)
 				oos.writeObject(r);
 			oos.close();
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error en la escritura del fichero reservas.dat");
 		}
 	}
 }
