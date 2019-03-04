@@ -11,6 +11,7 @@ import java.util.List;
 
 import javax.naming.OperationNotSupportedException;
 
+import org.iesalandalus.programacion.reservasaulas.modelo.ModeloReservasAulas;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
 
 /**
@@ -18,8 +19,9 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
  * conjunto de profesores
  *
  * @see Profesor
+ * @see ModeloReservasAulas
  * @author Juan Antonio Manzano Plaza
- * @version 2
+ * @version 3
  *
  */
 public class Profesores {
@@ -156,6 +158,9 @@ public class Profesores {
 		return representar;
 	}
 
+	/**
+	 * Lee de fichero los profesores guardados. Si el fichero no existe lo crea.
+	 */
 	public void leer() {
 		try {
 			Profesor profesor;
@@ -177,10 +182,13 @@ public class Profesores {
 				System.out.println("Lectura correcta del fichero profesores.dat");
 			}
 		} catch (Exception e) {
-			System.out.println("Lectura incorrecta del fichero profesores.dat");
+			System.out.println("Error en la lectura del fichero profesores.dat");
 		}
 	}
 
+	/**
+	 * Escribe en fichero las aulas guardadas
+	 */
 	public void escribir() {
 		try {
 			File f = new File(NOMBRE_FICHERO_PROFESORES + "\\profesores.dat");

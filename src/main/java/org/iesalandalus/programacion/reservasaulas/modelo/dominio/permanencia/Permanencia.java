@@ -8,8 +8,10 @@ import java.time.format.DateTimeParseException;
 /**
  * Clase que representa el tiempo que es reservada un aula.
  * 
+ * @see PermanenciaPorHora
+ * @see PermanenciaPorTramo
  * @author Juan Antonio Manzano Plaza
- * @version 2
+ * @version 3
  *
  */
 public abstract class Permanencia implements Serializable {

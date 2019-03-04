@@ -20,7 +20,7 @@ import org.iesalandalus.programacion.reservasaulas.vista.VistaReservasAulas;
  * @see ModeloReservasAulas
  * @see VistaReservasAulas
  * @author Juan Antonio Manzano Plaza
- * @version 2
+ * @version 3
  *
  */
 public class ControladorReservasAulas implements IControladorReservasAulas {
@@ -44,7 +44,7 @@ public class ControladorReservasAulas implements IControladorReservasAulas {
 	}
 
 	/**
-	 * Llama al método comenzar de la vista
+	 * Carga los datos de los archivos llamando a los métodos del modelo y llama a el método comenzar de la vista
 	 */
 	public void comenzar() {
 		modelo.leerAulas();
@@ -54,7 +54,7 @@ public class ControladorReservasAulas implements IControladorReservasAulas {
 	}
 
 	/**
-	 * Llama al método salir de la vista
+	 * Guarda los datos de la aplicación en ficheros llamando a los métodos del modelo
 	 */
 	public void salir() {
 		modelo.escribirAulas();

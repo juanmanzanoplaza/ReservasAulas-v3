@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -13,6 +12,7 @@ import java.util.List;
 
 import javax.naming.OperationNotSupportedException;
 
+import org.iesalandalus.programacion.reservasaulas.modelo.ModeloReservasAulas;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Aula;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Reserva;
@@ -23,10 +23,11 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Pe
 /**
  * Clase que guarda y define las operaciones que se pueden realizar sobre un
  * conjunto de reservas.
- * 
+ *
  * @see Reserva
+ * @see ModeloReservasAulas
  * @author Juan Antonio Manzano Plaza
- * @version 2
+ * @version 3
  *
  */
 public class Reservas {
@@ -44,7 +45,7 @@ public class Reservas {
 
 	/**
 	 * Constructor copia. Realiza copia profunda para evitar aliasing
-	 * 
+	 *
 	 * @param reservas
 	 *            el objeto del que obtener los datos para inicializar
 	 * @throws IllegalArgumentException
@@ -57,7 +58,7 @@ public class Reservas {
 	/**
 	 * Guarda en la colección actual de reservas los que hay en la colección
 	 * recibida como parámetro
-	 * 
+	 *
 	 * @param reservas
 	 *            la colección a copiar
 	 * @throws IllegalArgumentException
@@ -71,7 +72,7 @@ public class Reservas {
 
 	/**
 	 * Realiza la copia en profundidad de cada reserva para evitar aliasing
-	 * 
+	 *
 	 * @param reservas
 	 *            la colección de reservas a copiar
 	 * @return una copia de la colección
@@ -86,7 +87,7 @@ public class Reservas {
 	/**
 	 * Obtiene todas las reservas de la colección actual. Realiza una copia para
 	 * evitar aliasing
-	 * 
+	 *
 	 * @return una copia de la colección
 	 */
 	public List<Reserva> getReservas() {
@@ -95,7 +96,7 @@ public class Reservas {
 
 	/**
 	 * Obtiene el número de reservas que existen en la colección actual
-	 * 
+	 *
 	 * @return el número de reservas
 	 */
 	public int getNumReservas() {
@@ -104,7 +105,7 @@ public class Reservas {
 
 	/**
 	 * Guarda una reserva en la colección
-	 * 
+	 *
 	 * @param reserva
 	 *            la reserva a guardar
 	 * @throws IllegalArgumentException
@@ -149,7 +150,7 @@ public class Reservas {
 	/**
 	 * Comprueba si el mes de la permanencia de la reserva es del mes siguiente al
 	 * actual
-	 * 
+	 *
 	 * @param aInsertar
 	 *            la reserva de la que queremos comprobar la fecha
 	 * @return true si la fecha es del mes siguiente o posterior, false si no
@@ -164,7 +165,7 @@ public class Reservas {
 
 	/**
 	 * Obtiene los puntos gastados en las reservas de el mes de ese profesor
-	 * 
+	 *
 	 * @param aInsertar
 	 *            la reserva de la que queremos obtener los puntos gastados en ese
 	 *            mes por ese profesor
@@ -184,7 +185,7 @@ public class Reservas {
 	/**
 	 * Obtiene las reservas correspondientes al profesor y día obtenidos por
 	 * parámetro
-	 * 
+	 *
 	 * @param reservador
 	 *            el profesor a cuyo nombre están las reservas
 	 * @param dia
@@ -212,7 +213,7 @@ public class Reservas {
 
 	/**
 	 * Busca una reserva en la colección
-	 * 
+	 *
 	 * @param reserva
 	 *            la reserva a buscar
 	 * @return la reserva buscada o null si no la encuentra
@@ -227,7 +228,7 @@ public class Reservas {
 
 	/**
 	 * Borra una reserva de la colección
-	 * 
+	 *
 	 * @param reserva
 	 *            la reserva a borrar
 	 * @throws IllegalArgumentException
@@ -245,7 +246,7 @@ public class Reservas {
 
 	/**
 	 * Obtiene las salidas de todas las reservas de la colección
-	 * 
+	 *
 	 * @return la salida de las reservas
 	 */
 	public List<String> representar() {
@@ -257,7 +258,7 @@ public class Reservas {
 
 	/**
 	 * Obtiene las reservas a nombre de un profesor indicado
-	 * 
+	 *
 	 * @param profesor
 	 *            el profesor que ha reservado
 	 * @return las reservas del profesor
@@ -277,7 +278,7 @@ public class Reservas {
 
 	/**
 	 * Obtiene las reservas realizadas a un aula indicada
-	 * 
+	 *
 	 * @param aula
 	 *            el aula reservada
 	 * @return las reservas del aula
@@ -297,7 +298,7 @@ public class Reservas {
 
 	/**
 	 * Obtiene las reservas realizadas en una fecha y tramo concretos
-	 * 
+	 *
 	 * @param permanencia
 	 *            la fecha y el tramo de las reservas
 	 * @return las reservas de esa fecha y tramo
@@ -317,7 +318,7 @@ public class Reservas {
 
 	/**
 	 * Comprueba si un aula está disponible en una fecha y tramos indicados
-	 * 
+	 *
 	 * @param aula
 	 *            el aula a comprobar
 	 * @param permanencia
@@ -348,6 +349,9 @@ public class Reservas {
 		return true;
 	}
 
+	/**
+	 * Lee de fichero las reservas guardadas. Si el fichero no existe lo crea.
+	 */
 	public void leer() {
 		try {
 			Reserva reserva;
@@ -357,7 +361,7 @@ public class Reservas {
 			f.createNewFile();
 			FileInputStream fis = new FileInputStream(f);
 			ObjectInputStream ois = null;
-			
+
 			try {
 				ois = new ObjectInputStream(fis);
 				while(true) {
@@ -372,7 +376,10 @@ public class Reservas {
 			System.out.println("Error en la lectura del fichero reservas.dat");
 		}
 	}
-	
+
+	/**
+	 * Escribe en fichero las reservas guardadas.
+	 */
 	public void escribir() {
 		try {
 			File f = new File(NOMBRE_FICHERO_RESERVAS + "\\reservas.dat");

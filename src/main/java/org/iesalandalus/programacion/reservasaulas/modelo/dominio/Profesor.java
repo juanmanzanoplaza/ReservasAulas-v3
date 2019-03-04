@@ -7,9 +7,9 @@ import java.util.regex.Pattern;
 
 /**
  * Clase que representa un profesor de un instituto
- * 
+ *
  * @author Juan Antonio Manzano Plaza
- * @version 2
+ * @version 3
  *
  */
 public class Profesor implements Serializable {
@@ -22,7 +22,7 @@ public class Profesor implements Serializable {
 
 	/**
 	 * Constructor de la clase
-	 * 
+	 *
 	 * @param nombre
 	 *            el nombre del profesor
 	 * @param correo
@@ -38,7 +38,7 @@ public class Profesor implements Serializable {
 
 	/**
 	 * Constructor de la clase
-	 * 
+	 *
 	 * @param nombre
 	 *            el nombre del profesor
 	 * @param correo
@@ -56,7 +56,7 @@ public class Profesor implements Serializable {
 
 	/**
 	 * Constructor copia
-	 * 
+	 *
 	 * @param otro
 	 *            el profesor a copiar
 	 * @throws IllegalArgumentException
@@ -73,7 +73,7 @@ public class Profesor implements Serializable {
 
 	/**
 	 * Método set para el nombre del profesor
-	 * 
+	 *
 	 * @param nombre
 	 *            el nombre del profesor
 	 * @throws IllegalArgumentException
@@ -90,7 +90,7 @@ public class Profesor implements Serializable {
 
 	/**
 	 * Método set para el correo electrónico del profesor
-	 * 
+	 *
 	 * @param correo
 	 *            el correo del profesor
 	 * @throws IllegalArgumentException
@@ -109,7 +109,7 @@ public class Profesor implements Serializable {
 
 	/**
 	 * Método set para el teléfono del profesor
-	 * 
+	 *
 	 * @param telefono
 	 *            el telefono del profesor
 	 * @throws IllegalArgumentException
@@ -129,7 +129,7 @@ public class Profesor implements Serializable {
 
 	/**
 	 * Método get para el nombre del profesor
-	 * 
+	 *
 	 * @return el nombre del profesor
 	 */
 	public String getNombre() {
@@ -138,7 +138,7 @@ public class Profesor implements Serializable {
 
 	/**
 	 * Método get para el correo del profesor
-	 * 
+	 *
 	 * @return el correo del profesor
 	 */
 	public String getCorreo() {
@@ -147,7 +147,7 @@ public class Profesor implements Serializable {
 
 	/**
 	 * Método get para el teléfono del profesor
-	 * 
+	 *
 	 * @return el teléfono del profesor
 	 */
 	public String getTelefono() {
@@ -156,7 +156,7 @@ public class Profesor implements Serializable {
 
 	/**
 	 * Método hashCode de la clase. Sirve para diferenciar objetos
-	 * 
+	 *
 	 * @return el código hash del objeto
 	 */
 	public int hashCode() {
@@ -165,7 +165,7 @@ public class Profesor implements Serializable {
 
 	/**
 	 * Método equals de la clase
-	 * 
+	 *
 	 * @return True si son iguales, False si no
 	 */
 	public boolean equals(Object o) {
@@ -182,7 +182,7 @@ public class Profesor implements Serializable {
 
 	/**
 	 * Representa un profesor como una cadena de caracteres
-	 * 
+	 *
 	 * @return la representación del profesor
 	 */
 	public String toString() {

@@ -9,14 +9,13 @@ import org.iesalandalus.programacion.reservasaulas.vista.VistaReservasAulas;
 
 /**
  *
- * Clase principal del programa. Se encarga de hacer la primera llamada y
- * comenzar la ejecución.
+ * Clase principal del programa. Realiza la primera llamada al controlador.
  * 
  * @see VistaReservasAulas
  * @see ControladorReservasAulas
  * @see ModeloReservasAulas
  * @author Juan Antonio Manzano Plaza
- * @version 2
+ * @version 3
  *
  */
 public class MainApp {

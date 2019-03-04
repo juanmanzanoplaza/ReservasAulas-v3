@@ -3,10 +3,10 @@ package org.iesalandalus.programacion.reservasaulas.vista;
 /**
  *
  * Representa las distintas opciones que ofrece el menú de la aplicación.
- * 
+ *
  * @see VistaReservasAulas
  * @author Juan Antonio Manzano Plaza
- * @version 2
+ * @version 3
  *
  */
 public enum Opcion {
@@ -96,7 +96,7 @@ public enum Opcion {
 
 	/**
 	 * Constructor privado para evitar instanciar objetos de la clase.
-	 * 
+	 *
 	 * @param mensajeAMostrar
 	 *            el título de la opción
 	 */
@@ -106,7 +106,7 @@ public enum Opcion {
 
 	/**
 	 * Método get que devuelve el título de la opción
-	 * 
+	 *
 	 * @return el título de la opción
 	 */
 	public String getMensaje() {
@@ -120,7 +120,7 @@ public enum Opcion {
 
 	/**
 	 * Método set que inicializa la variable vista
-	 * 
+	 *
 	 * @param vist
 	 *            objeto de la clase VistaReservasAulas sobre el que se van a
 	 *            realizar las opciones
@@ -131,7 +131,7 @@ public enum Opcion {
 
 	/**
 	 * Define como debe mostrarse un objeto Opcion
-	 * 
+	 *
 	 * @return mensajeAMostrar el título de la opción
 	 */
 	public String toString() {
@@ -140,7 +140,7 @@ public enum Opcion {
 
 	/**
 	 * Devuelve la opción correspondiente al valor recibido
-	 * 
+	 *
 	 * @param ordinal
 	 *            el valor de la opción
 	 * @return la opción correspondiente al ordinal
@@ -151,7 +151,7 @@ public enum Opcion {
 
 	/**
 	 * Comprueba si un ordinal está dentro del rango de valores de Opcion
-	 * 
+	 *
 	 * @param ordinal
 	 *            el valor de la opción que se desea seleccionar
 	 * @return True si el valor está dentro del rango, False si no

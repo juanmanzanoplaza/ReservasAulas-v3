@@ -11,8 +11,9 @@ import java.util.Objects;
  * Clase que representa durante cuanto tiempo se reserva un aula. Esta clase
  * permite que se pueda reservar un aula por un tramo de una hora.
  * 
+ * @see Permanencia
  * @author Juan Antonio Manzano Plaza
- * @version 2
+ * @version 3
  *
  */
 public class PermanenciaPorHora extends Permanencia implements Serializable {

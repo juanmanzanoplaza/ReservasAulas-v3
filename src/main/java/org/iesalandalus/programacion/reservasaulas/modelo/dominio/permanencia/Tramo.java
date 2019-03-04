@@ -5,9 +5,9 @@ import java.io.Serializable;
 /**
  * Clase enumerada para los distintos tramos de la permanencia
  * 
- * @see Permanencia
+ * @see PermanenciaPorTramo
  * @author Juan Antonio Manzano Plaza
- * @version 2
+ * @version 3
  */
 public enum Tramo implements Serializable{
 	MANANA("Mañana"), TARDE("Tarde");

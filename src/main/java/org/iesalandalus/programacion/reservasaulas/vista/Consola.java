@@ -9,11 +9,11 @@ import org.iesalandalus.programacion.utilidades.Entrada;
  *
  * Clase dedicada a la interacción con el usuario. Pide y lee los datos por
  * teclado
- * 
+ *
  * @see VistaReservasAulas
  * @see Opcion
  * @author Juan Antonio Manzano Plaza
- * @version 2
+ * @version 3
  *
  */
 public class Consola {
@@ -42,7 +42,7 @@ public class Consola {
 
 	/**
 	 * Imprime por pantalla el título de la opción seleccionada.
-	 * 
+	 *
 	 * @param cabecera
 	 *            el título de la opción
 	 */
@@ -52,7 +52,7 @@ public class Consola {
 
 	/**
 	 * Lee por consola el valor ordinal de la opción que desea realizarse.
-	 * 
+	 *
 	 * @return el valor ordinal de la opción a realizar
 	 */
 	public static int elegirOpcion() {
@@ -64,7 +64,7 @@ public class Consola {
 
 	/**
 	 * Lee por consola el nombre de un aula y la crea.
-	 * 
+	 *
 	 * @return el aula leída
 	 */
 	public static Aula leerAula() {
@@ -79,7 +79,7 @@ public class Consola {
 
 	/**
 	 * Lee por consola el nombre de un aula.
-	 * 
+	 *
 	 * @return el nombre leído
 	 */
 	public static String leerNombreAula() {
@@ -91,7 +91,7 @@ public class Consola {
 
 	/**
 	 * Lee por consola todos los atributos de un profesor y lo crea.
-	 * 
+	 *
 	 * @return el profesor leído
 	 */
 	public static Profesor leerProfesor() {
@@ -111,7 +111,7 @@ public class Consola {
 
 	/**
 	 * Lee por consola el nombre de un profesor.
-	 * 
+	 *
 	 * @return el nombre leído
 	 */
 	public static String leerNombreProfesor() {
@@ -125,7 +125,7 @@ public class Consola {
 	 * Lee por consola un tramo. En esta versión sólo están las opciones de mañana
 	 * (0) y de tarde (1) Si añadimos más opciones a Tramo será necesario cambiar la
 	 * salida por pantalla, pero no el bucle ni el return.
-	 * 
+	 *
 	 * @return el tramo horario leído
 	 */
 	public static Tramo leerTramo() {
@@ -140,7 +140,7 @@ public class Consola {
 
 	/**
 	 * Lee por consola el día para una permanencia
-	 * 
+	 *
 	 * @return la fecha leída
 	 */
 	public static String leerDia() {
@@ -152,7 +152,7 @@ public class Consola {
 
 	/**
 	 * Lee por consola la hora para una permanencia por hora
-	 * 
+	 *
 	 * @return la hora leída
 	 */
 	public static String leerHora() {
@@ -164,7 +164,7 @@ public class Consola {
 
 	/**
 	 * Lee por consola el tipo de permanencia que se desea leer
-	 * 
+	 *
 	 * @return el tipo de permanencia elegido
 	 */
 	public static int elegirPermanencia() {

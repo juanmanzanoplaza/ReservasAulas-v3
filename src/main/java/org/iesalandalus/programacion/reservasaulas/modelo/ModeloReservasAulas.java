@@ -25,7 +25,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Pe
  * @see ControladorReservasAulas
  * @see IControladorReservasAulas
  * @author Juan Antonio Manzano Plaza
- * @version 2
+ * @version 3
  *
  */
 public class ModeloReservasAulas implements IModeloReservasAulas {
@@ -116,10 +116,16 @@ public class ModeloReservasAulas implements IModeloReservasAulas {
 			reservas.borrar(r);
 	}
 
+	/**
+	 * Lee de fichero las aulas guardadas. Si el fichero no existe lo crea.
+	 */
 	public void leerAulas() {
 		aulas.leer();
 	}
 
+	/**
+	 * Escribe en fichero las aulas guardadas.
+	 */
 	public void escribirAulas() {
 		aulas.escribir();
 	}
@@ -200,10 +206,16 @@ public class ModeloReservasAulas implements IModeloReservasAulas {
 			reservas.borrar(r);
 	}
 
+	/**
+	 * Lee de fichero los profesores guardados. Si el fichero no existe lo crea.
+	 */
 	public void leerProfesores() {
 		profesores.leer();
 	}
 
+	/**
+	 * Escribe en fichero los profesores guardados.
+	 */
 	public void escribirProfesores() {
 		profesores.escribir();
 	}
@@ -341,10 +353,16 @@ public class ModeloReservasAulas implements IModeloReservasAulas {
 		return reservas.consultarDisponibilidad(aula, permanencia);
 	}
 
+	/**
+	 * Lee de fichero las reservas guardadas. Si el fichero no existe lo crea.
+	 */
 	public void leerReservas() {
 		reservas.leer();
 	}
 
+	/**
+	 * Escribe en fichero las reservas guardadas.
+	 */
 	public void escribirReservas() {
 		reservas.escribir();
 	}

@@ -5,9 +5,9 @@ import java.util.Objects;
 
 /**
  * Clase que representa un aula de un instituto
- * 
+ *
  * @author Juan Antonio Manzano Plaza
- * @version 2
+ * @version 3
  *
  */
 public class Aula implements Serializable {
@@ -20,7 +20,7 @@ public class Aula implements Serializable {
 
 	/**
 	 * Constructor de la clase
-	 * 
+	 *
 	 * @param nombre
 	 *            el nombre del aula
 	 * @param puestos
@@ -35,7 +35,7 @@ public class Aula implements Serializable {
 
 	/**
 	 * Constructor copia
-	 * 
+	 *
 	 * @param otra
 	 *            el aula a copiar
 	 * @throws IllegalArgumentException
@@ -50,7 +50,7 @@ public class Aula implements Serializable {
 
 	/**
 	 * Método set para el nombre del aula
-	 * 
+	 *
 	 * @param nombre
 	 *            el nombre del aula
 	 * @throws IllegalArgumentException
@@ -66,7 +66,7 @@ public class Aula implements Serializable {
 
 	/**
 	 * Método get para el nombre del aula
-	 * 
+	 *
 	 * @return el nombre del aula
 	 */
 	public String getNombre() {
@@ -75,7 +75,7 @@ public class Aula implements Serializable {
 
 	/**
 	 * Método set para el número de asientos de un aula
-	 * 
+	 *
 	 * @param puestos
 	 *            los número de asientos de un aula
 	 * @throws IllegalArgumentException
@@ -89,7 +89,7 @@ public class Aula implements Serializable {
 
 	/**
 	 * Método get para las plazas de un aula
-	 * 
+	 *
 	 * @return las plazas del aula
 	 */
 	public int getPuestos() {
@@ -98,7 +98,7 @@ public class Aula implements Serializable {
 
 	/**
 	 * Método que calcula los puntos que resta reservar el aula
-	 * 
+	 *
 	 * @return la cantidad de puntos que cuesta reservar el aula
 	 */
 	public float getPuntos() {
@@ -107,7 +107,7 @@ public class Aula implements Serializable {
 
 	/**
 	 * Método hashCode de la clase. Sirve para diferenciar objetos
-	 * 
+	 *
 	 * @return el código hash del objeto
 	 */
 	public int hashCode() {
@@ -116,7 +116,7 @@ public class Aula implements Serializable {
 
 	/**
 	 * Método equals de la clase
-	 * 
+	 *
 	 * @return True si son iguales, False si no
 	 */
 	public boolean equals(Object o) {
@@ -132,7 +132,7 @@ public class Aula implements Serializable {
 
 	/**
 	 * Representa un aula como una cadena de caracteres
-	 * 
+	 *
 	 * @return la representación del aula
 	 */
 	public String toString() {
