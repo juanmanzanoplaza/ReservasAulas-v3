@@ -177,7 +177,8 @@ public class Aulas {
 					coleccionAulas.add(aula);
 				}
 			} catch (EOFException eof) {
-				ois.close();
+				if(ois != null)
+					ois.close();
 				System.out.println("Lectura correcta del fichero aulas.dat");
 			}
 		} catch (Exception e) {
