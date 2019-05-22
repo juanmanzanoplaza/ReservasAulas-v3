@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
  * @version 3
  *
  */
+@SuppressWarnings("serial")
 public class Profesor implements Serializable {
 
 	private static final String ER_TELEFONO = "^[69][0-9]{8}$";
@@ -26,9 +27,9 @@ public class Profesor implements Serializable {
 	 * @param nombre
 	 *            el nombre del profesor
 	 * @param correo
-	 *            el correo electrónico del profesor
+	 *            el correo electrï¿½nico del profesor
 	 * @throws IllegalArgumentException
-	 *             si alguno de los parámetros no es válido
+	 *             si alguno de los parï¿½metros no es vï¿½lido
 	 */
 	public Profesor(String nombre, String correo) throws IllegalArgumentException {
 		setNombre(nombre);
@@ -42,11 +43,11 @@ public class Profesor implements Serializable {
 	 * @param nombre
 	 *            el nombre del profesor
 	 * @param correo
-	 *            el correo electrónico del profesor
+	 *            el correo electrï¿½nico del profesor
 	 * @param telefono
-	 *            el teléfono del profesor
+	 *            el telï¿½fono del profesor
 	 * @throws IllegalArgumentException
-	 *             si alguno de los parámetros no es válido
+	 *             si alguno de los parï¿½metros no es vï¿½lido
 	 */
 	public Profesor(String nombre, String correo, String telefono) throws IllegalArgumentException {
 		setNombre(nombre);
@@ -72,29 +73,29 @@ public class Profesor implements Serializable {
 	}
 
 	/**
-	 * Método set para el nombre del profesor
+	 * Mï¿½todo set para el nombre del profesor
 	 *
 	 * @param nombre
 	 *            el nombre del profesor
 	 * @throws IllegalArgumentException
-	 *             si el nombre es nulo o vacío
+	 *             si el nombre es nulo o vacï¿½o
 	 */
 	private void setNombre(String nombre) throws IllegalArgumentException {
 		if (nombre == null)
 			throw new IllegalArgumentException("El nombre del profesor no puede ser nulo.");
 		if (nombre.equals(""))
-			throw new IllegalArgumentException("El nombre del profesor no puede estar vacío.");
+			throw new IllegalArgumentException("El nombre del profesor no puede estar vacï¿½o.");
 		this.nombre = nombre;
 
 	}
 
 	/**
-	 * Método set para el correo electrónico del profesor
+	 * Mï¿½todo set para el correo electrï¿½nico del profesor
 	 *
 	 * @param correo
 	 *            el correo del profesor
 	 * @throws IllegalArgumentException
-	 *             si el correo es nulo o no es un correo con formato válido
+	 *             si el correo es nulo o no es un correo con formato vï¿½lido
 	 */
 	public void setCorreo(String correo) throws IllegalArgumentException {
 		if (correo == null)
@@ -103,17 +104,17 @@ public class Profesor implements Serializable {
 		if (m.matches())
 			this.correo = correo;
 		else
-			throw new IllegalArgumentException("El correo del profesor no es válido.");
+			throw new IllegalArgumentException("El correo del profesor no es vï¿½lido.");
 
 	}
 
 	/**
-	 * Método set para el teléfono del profesor
+	 * Mï¿½todo set para el telï¿½fono del profesor
 	 *
 	 * @param telefono
 	 *            el telefono del profesor
 	 * @throws IllegalArgumentException
-	 *             si el teléfono no tiene un formato válido
+	 *             si el telï¿½fono no tiene un formato vï¿½lido
 	 */
 	public void setTelefono(String telefono) throws IllegalArgumentException {
 		if (telefono == null) {
@@ -123,12 +124,12 @@ public class Profesor implements Serializable {
 			if (m.matches())
 				this.telefono = telefono;
 			else
-				throw new IllegalArgumentException("El teléfono del profesor no es válido.");
+				throw new IllegalArgumentException("El telï¿½fono del profesor no es vï¿½lido.");
 		}
 	}
 
 	/**
-	 * Método get para el nombre del profesor
+	 * Mï¿½todo get para el nombre del profesor
 	 *
 	 * @return el nombre del profesor
 	 */
@@ -137,7 +138,7 @@ public class Profesor implements Serializable {
 	}
 
 	/**
-	 * Método get para el correo del profesor
+	 * Mï¿½todo get para el correo del profesor
 	 *
 	 * @return el correo del profesor
 	 */
@@ -146,25 +147,25 @@ public class Profesor implements Serializable {
 	}
 
 	/**
-	 * Método get para el teléfono del profesor
+	 * Mï¿½todo get para el telï¿½fono del profesor
 	 *
-	 * @return el teléfono del profesor
+	 * @return el telï¿½fono del profesor
 	 */
 	public String getTelefono() {
 		return telefono;
 	}
 
 	/**
-	 * Método hashCode de la clase. Sirve para diferenciar objetos
+	 * Mï¿½todo hashCode de la clase. Sirve para diferenciar objetos
 	 *
-	 * @return el código hash del objeto
+	 * @return el cï¿½digo hash del objeto
 	 */
 	public int hashCode() {
 		return Objects.hash(nombre, correo, telefono);
 	}
 
 	/**
-	 * Método equals de la clase
+	 * Mï¿½todo equals de la clase
 	 *
 	 * @return True si son iguales, False si no
 	 */
@@ -183,7 +184,7 @@ public class Profesor implements Serializable {
 	/**
 	 * Representa un profesor como una cadena de caracteres
 	 *
-	 * @return la representación del profesor
+	 * @return la representaciï¿½n del profesor
 	 */
 	public String toString() {
 		String devolver = "[nombre=" + getNombre() + ", correo=" + getCorreo();

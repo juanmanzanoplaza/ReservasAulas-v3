@@ -14,14 +14,15 @@ import java.time.format.DateTimeParseException;
  * @version 3
  *
  */
+@SuppressWarnings("serial")
 public abstract class Permanencia implements Serializable {
 
 	protected LocalDate dia;
 	protected static final DateTimeFormatter FORMATO_DIA = DateTimeFormatter.ofPattern("dd/MM/uuuu");
 
 	/**
-	 * NECESARIO PARA LAS LLAMADAS AL SUPER DESDE LAS CLASES HIJAS SIN PARÁMETROS
-	 * Puede ser vacío o darle un valor por defecto, es indiferente por que lo
+	 * NECESARIO PARA LAS LLAMADAS AL SUPER DESDE LAS CLASES HIJAS SIN PARï¿½METROS
+	 * Puede ser vacï¿½o o darle un valor por defecto, es indiferente por que lo
 	 * sobreescribiremos en las implementaciones de los constructores de las clases
 	 * hijas.
 	 */
@@ -33,9 +34,9 @@ public abstract class Permanencia implements Serializable {
 	 * Constructor de la clase
 	 * 
 	 * @param dia
-	 *            el día de la reserva
+	 *            el dï¿½a de la reserva
 	 * @throws IllegalArgumentException
-	 *             si el día de la permanencia no es válido
+	 *             si el dï¿½a de la permanencia no es vï¿½lido
 	 */
 	protected Permanencia(LocalDate dia) throws IllegalArgumentException {
 		setDia(dia);
@@ -47,50 +48,50 @@ public abstract class Permanencia implements Serializable {
 	 * @param dia
 	 *            la fecha de la permanencia
 	 * @throws IllegalArgumentException
-	 *             si el día de la permanencia no es válido
+	 *             si el dï¿½a de la permanencia no es vï¿½lido
 	 */
 	protected Permanencia(String dia) throws IllegalArgumentException {
 		setDia(dia);
 	}
 
 	/**
-	 * Método get para el día de la reserva
+	 * Mï¿½todo get para el dï¿½a de la reserva
 	 * 
-	 * @return el día de la reserva
+	 * @return el dï¿½a de la reserva
 	 */
 	public LocalDate getDia() {
 		return this.dia;
 	}
 
 	/**
-	 * Método set para el día de la reserva
+	 * Mï¿½todo set para el dï¿½a de la reserva
 	 * 
 	 * @param dia
 	 *            la fecha de la reserva
 	 * @throws IllegalArgumentException
-	 *             si el día es nulo
+	 *             si el dï¿½a es nulo
 	 */
 	protected void setDia(LocalDate dia) throws IllegalArgumentException {
 		if (dia == null)
-			throw new IllegalArgumentException("El día de una permanencia no puede ser nulo.");
+			throw new IllegalArgumentException("El dï¿½a de una permanencia no puede ser nulo.");
 		this.dia = LocalDate.of(dia.getYear(), dia.getMonth(), dia.getDayOfMonth());
 	}
 
 	/**
-	 * Método set para el día de la reserva
+	 * Mï¿½todo set para el dï¿½a de la reserva
 	 * 
 	 * @param dia
 	 *            la fecha de la reserva
 	 * @throws IllegalArgumentException
-	 *             si el día es nulo o el formato no es válido
+	 *             si el dï¿½a es nulo o el formato no es vï¿½lido
 	 */
 	protected void setDia(String dia) throws IllegalArgumentException {
 		if (dia == null)
-			throw new IllegalArgumentException("El día de una permanencia no puede ser nulo.");
+			throw new IllegalArgumentException("El dï¿½a de una permanencia no puede ser nulo.");
 		try {
 			this.dia = LocalDate.parse(dia, FORMATO_DIA);
 		} catch (DateTimeParseException e) {
-			throw new IllegalArgumentException("El formato del día de la permanencia no es correcto.");
+			throw new IllegalArgumentException("El formato del dï¿½a de la permanencia no es correcto.");
 		}
 	}
 
@@ -105,19 +106,19 @@ public abstract class Permanencia implements Serializable {
 	/**
 	 * Representa una permanencia como una cadena de caracteres
 	 * 
-	 * @return la representación de la permanencia
+	 * @return la representaciï¿½n de la permanencia
 	 */
 	public abstract String toString();
 
 	/**
-	 * Método hashCode de la clase. Sirve para diferenciar objetos
+	 * Mï¿½todo hashCode de la clase. Sirve para diferenciar objetos
 	 * 
-	 * @return el código hash del objeto
+	 * @return el cï¿½digo hash del objeto
 	 */
 	public abstract int hashCode();
 
 	/**
-	 * Método equals de la clase
+	 * Mï¿½todo equals de la clase
 	 * 
 	 * @return True si son iguales, False si no
 	 */

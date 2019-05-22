@@ -10,6 +10,7 @@ import java.util.Objects;
  * @version 3
  *
  */
+@SuppressWarnings("serial")
 public class Aula implements Serializable {
 
 	private static final float PUNTOS_POR_PUESTO = 0.5f;
@@ -24,9 +25,9 @@ public class Aula implements Serializable {
 	 * @param nombre
 	 *            el nombre del aula
 	 * @param puestos
-	 *            el número de plazas que tiene el aula
+	 *            el nï¿½mero de plazas que tiene el aula
 	 * @throws IllegalArgumentException
-	 *             si alguno de los parámetros no es válido
+	 *             si alguno de los parï¿½metros no es vï¿½lido
 	 */
 	public Aula(String nombre, int puestos) throws IllegalArgumentException {
 		setNombre(nombre);
@@ -49,23 +50,23 @@ public class Aula implements Serializable {
 	}
 
 	/**
-	 * Método set para el nombre del aula
+	 * Mï¿½todo set para el nombre del aula
 	 *
 	 * @param nombre
 	 *            el nombre del aula
 	 * @throws IllegalArgumentException
-	 *             si el nombre es nulo o vacío
+	 *             si el nombre es nulo o vacï¿½o
 	 */
 	private void setNombre(String nombre) throws IllegalArgumentException {
 		if (nombre == null)
 			throw new IllegalArgumentException("El nombre del aula no puede ser nulo.");
 		if (nombre.equals(""))
-			throw new IllegalArgumentException("El nombre del aula no puede estar vacío.");
+			throw new IllegalArgumentException("El nombre del aula no puede estar vacï¿½o.");
 		this.nombre = nombre;
 	}
 
 	/**
-	 * Método get para el nombre del aula
+	 * Mï¿½todo get para el nombre del aula
 	 *
 	 * @return el nombre del aula
 	 */
@@ -74,21 +75,21 @@ public class Aula implements Serializable {
 	}
 
 	/**
-	 * Método set para el número de asientos de un aula
+	 * Mï¿½todo set para el nï¿½mero de asientos de un aula
 	 *
 	 * @param puestos
-	 *            los número de asientos de un aula
+	 *            los nï¿½mero de asientos de un aula
 	 * @throws IllegalArgumentException
-	 *             si el número de puestos no están entre el máximo y el mínimo
+	 *             si el nï¿½mero de puestos no estï¿½n entre el mï¿½ximo y el mï¿½nimo
 	 */
 	private void setPuestos(int puestos) throws IllegalArgumentException {
 		if (puestos < MIN_PUESTOS || puestos > MAX_PUESTOS)
-			throw new IllegalArgumentException("El número de puestos no es correcto.");
+			throw new IllegalArgumentException("El nï¿½mero de puestos no es correcto.");
 		this.puestos = puestos;
 	}
 
 	/**
-	 * Método get para las plazas de un aula
+	 * Mï¿½todo get para las plazas de un aula
 	 *
 	 * @return las plazas del aula
 	 */
@@ -97,7 +98,7 @@ public class Aula implements Serializable {
 	}
 
 	/**
-	 * Método que calcula los puntos que resta reservar el aula
+	 * Mï¿½todo que calcula los puntos que resta reservar el aula
 	 *
 	 * @return la cantidad de puntos que cuesta reservar el aula
 	 */
@@ -106,16 +107,16 @@ public class Aula implements Serializable {
 	}
 
 	/**
-	 * Método hashCode de la clase. Sirve para diferenciar objetos
+	 * Mï¿½todo hashCode de la clase. Sirve para diferenciar objetos
 	 *
-	 * @return el código hash del objeto
+	 * @return el cï¿½digo hash del objeto
 	 */
 	public int hashCode() {
 		return Objects.hash(nombre);
 	}
 
 	/**
-	 * Método equals de la clase
+	 * Mï¿½todo equals de la clase
 	 *
 	 * @return True si son iguales, False si no
 	 */
@@ -133,7 +134,7 @@ public class Aula implements Serializable {
 	/**
 	 * Representa un aula como una cadena de caracteres
 	 *
-	 * @return la representación del aula
+	 * @return la representaciï¿½n del aula
 	 */
 	public String toString() {
 		return "[nombre=" + nombre + ", puestos=" + puestos + "]";
